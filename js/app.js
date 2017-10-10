@@ -1,22 +1,22 @@
-var card=["12233435542"];
+var card=["12233435592"];
 var isValidCard = function (array) {
   newArr= [array[0].split("")];
-  newArr[0].reverse();
-  return newArr;
+  var rever= newArr[0].reverse();
+    for (var i=0; i<rever.length;i++){
+      if (rever.indexOf(rever[i])%2!==0){
+          var product=[rever[i]*2];
+            if (product[0]>9){
+                var numStr=[product[0].toString()];
+                var items=[numStr[0].split("")];
+                Number(items);
+                var sum=items[0][0]+items[0][1];
+                return sum;
+            }else{
+                return product;
+            }
+      }
+  }
 
 };
 
-//Pruebas de funcionamiento para luego ejecutar
-
-var a=["12232438"];
-var b=[a[0].split("")];
-b[0].reverse();
-
-
-var c=[b[0][0]*2];
-var sum=[0];
-var l=[c.toString()];
-var k=l[0].split("");
-var Item1=parseInt(k[0]);
-var Item2=parseInt(k[1]);
-sum= Item1+Item2;
+isValidCard(card);
